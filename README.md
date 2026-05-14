@@ -41,3 +41,4 @@
     - saving inventory
     - using items and gaining items
 - Currency and shops
+- Main menu
