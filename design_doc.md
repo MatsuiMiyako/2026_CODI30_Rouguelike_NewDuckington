@@ -98,7 +98,7 @@ You play as one of the few surviving ducks, driven by vengeance and determined t
 
 You begin the story at Whispering Waters
 
-Magic asteriod lands and the ducks race the bears (and win; cannot advance if the duck loses the race). The ducks gain superpowers from the asteroid. 
+A magic asteriod falls out of the sky and lands in the distance. The ducks race the bears (and win; cannot advance if the duck loses the race). The ducks gain superpowers from the asteroid. 
 
 Ducks storm the Bear castle and fight for vengeance 
 
