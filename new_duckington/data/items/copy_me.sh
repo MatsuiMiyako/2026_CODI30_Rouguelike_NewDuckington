@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # import what you need here, for example:
-# export GAME_ROOT="$(dirname "$0")/.."
+# source new_duckington/main.sh
 # source "$GAME_ROOT/system/stats.sh"
 
 ITEM_NAME="Copy Me" # Name of the item that will be displayed by the game

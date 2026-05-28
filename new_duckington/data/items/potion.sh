@@ -1,6 +1,5 @@
 #!/bin/bash
-
-export GAME_ROOT="$(dirname "$0")/.."
+source new_duckington/main.sh
 source "$GAME_ROOT/system/stats.sh"
 
 ITEM_NAME="Potion"
@@ -19,5 +18,5 @@ item_effect() {
     # save the game
     save_player_data
 }
-ITEM_RARITY="Legendary" # Rarity of the item, which can be "Common", "Uncommon", "Rare", "Epic", "Legendary"
-ITEM_NUMBER=001 # Unique identifier for the item
+ITEM_RARITY="Common"
+ITEM_NUMBER=003

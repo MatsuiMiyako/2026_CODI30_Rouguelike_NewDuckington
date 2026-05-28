@@ -1,6 +1,5 @@
 #!/bin/bash
-
-export GAME_ROOT="$(dirname "$0")/.."
+source new_duckington/main.sh
 source "$GAME_ROOT/system/stats.sh"
 
 ITEM_NAME="Funny Snack"

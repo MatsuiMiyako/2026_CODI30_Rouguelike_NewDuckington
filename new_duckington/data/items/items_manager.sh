@@ -3,9 +3,6 @@
 # This file gets all the items under the data/items folder and put them into the variable ITEMS_POOL, 
 # which will be used in the game to generate random items for the player.
 
-export GAME_ROOT="$(dirname "$0")/.."
-source "$GAME_ROOT/main.sh"
-
 ITEMS_POOL=()
 for item_file in "$GAME_ROOT"/data/items/*; do
     if [[ -f "$item_file" ]] && [[ "$item_file" != "$GAME_ROOT"/data/items/items_manager.sh ]]; then
@@ -23,16 +20,23 @@ get_item_pool() {
 }
 
 get_item_description() {
-    # pLACEHOlder
-    :
+    # get item description by sourcing the item file and echoing the ITEM_DESC variable
+    local item_name="$1"
+    local item_file="$GAME_ROOT/data/items/$item_name.sh"
+    if [[ -f "$item_file" ]]; then
+        source "$item_file"
+        echo "$ITEM_DESC"
+    else
+        echo "Item file $item_file not found!"
+    fi
 }
 
 test_use_item() {
     # testing the use of an item
     # the item you want to test stored in the variable TEST_ITEM from the item pool, and find the path of the item file, 
     # then source it to use the item_effect function.
-    TEST_ITEM="funny_snack.sh" # Change this to the item you want to test
-    item_file="$GAME_ROOT/data/items/$TEST_ITEM"
+    TEST_ITEM="$1.sh" # takes the item name as an argument, for example "potion.sh"
+    local item_file="$GAME_ROOT/data/items/$TEST_ITEM"
     if [[ -f "$item_file" ]]; then
         source "$item_file"
         item_effect
