@@ -34,7 +34,7 @@ get_item_description() {
     fi
 }
 
-test_use_item() {
+use_item() {
     # testing the use of an item
     # the item you want to test stored in the variable TEST_ITEM from the item pool, and find the path of the item file, 
     # then source it to use the item_effect function.
@@ -47,3 +47,4 @@ test_use_item() {
         echo "Item file $item_file not found!"
     fi
 }
+
