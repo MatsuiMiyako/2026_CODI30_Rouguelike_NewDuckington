@@ -25,15 +25,16 @@ shop() {
 	echo 
 	echo
 	printf "What do you want to do"
-
-
-	echo -e "${YELLOW}   [1]  Buy $item1${NC}" 
-	echo -e "${GREEN}   [2]  Buy $item2${NC}"
-	echo -e "${BLUE}   [4]  Buy $item3${NC}"
-	echo -e "${PINK}   [4]  Buy $item4${NC}"
-	echo -e "${RED}   [5]  EXIT SHOP${NC}"
+	echo
+	echo "-------------------"
+	echo -e "${YELLOW}[1]  Buy $item1${NC}" 
+	echo -e "${GREEN}[2]  Buy $item2${NC}"
+	echo -e "${BLUE}[4]  Buy $item3${NC}"
+	echo -e "${PINK}[4]  Buy $item4${NC}"
+	echo -e "${RED}[5]  EXIT SHOP${NC}"
 	read shop_action
-
+	case $shop_action in
+		
 
 
 
