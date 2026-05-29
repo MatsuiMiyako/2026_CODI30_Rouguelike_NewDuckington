@@ -23,7 +23,7 @@ BROWN='\033[0;33m'   # terminals fake brown using dark yellow/orange
 # Reset colour
 NC='\033[0m'
 
-shop() {
+buy_shop() {
 	echo -e "${RED}===================${NC}"
 	echo -e "${CYAN}The Shop...${NC}"
 	echo -e "${RED}===================${NC}"
@@ -94,4 +94,4 @@ shop() {
 
 
 }
-shop
+buy_shop
