@@ -92,8 +92,15 @@ It's a rogue-like game set in a world where ducks and bears are at war.
 The bears, being unorganized, failed in their attempts to attack the alliance. However, one bear rose above the others and formed a pact with a dragon. Together, they launched a devastating assault that massacred the ducks of Whispering Waters. 
 There is an organization called New Duckington beside a pond known as Whispering Waters. Ducks from all around the world gathered there to form an alliance against the bears after the massacre.
 
-
 You play as one of the few surviving ducks, driven by vengeance and determined to hunt down the bear and dragon duo responsible for the destruction.
+
+## Character Backstories:
+ Kyle Pekin: A rich boy who was orphaned
+ 
+ Crystal Quacker: Queen Avian's daughter
+ 
+ "Loony" Bill Muscovski: Kooky old mentor
+
 
 ## Progression of Events
 (*character selection when starting the game)
@@ -106,7 +113,7 @@ An asteriod falls out of the sky and lands in the distance, radiating a magical 
 The ducks arrive at the bears fortress. It is LOCKED and you cannot enter without a passcode. 
 --> the player must complete a puzzle to obtain the passcode (TBD)
 
-Throughout the game and the progression of these introductory events, these are popup options to choose a path to obtain abilities & weapons. (see zenity)
+Optional: Throughout the game and the progression of these introductory events, these are popup options to choose a path to obtain abilities & weapons. (see zenity) 
 
 Ducks storm the Bear castle/fortress and fight for vengeance. 
 They progress through each of the 10 floors, until reaching the boss bear on the top floor.
