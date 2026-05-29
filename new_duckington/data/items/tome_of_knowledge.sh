@@ -4,9 +4,9 @@
 # source new_duckington/main.sh
 # source "$GAME_ROOT/system/stats.sh"
 
-ITEM_NAME="Copy Me" # Name of the item that will be displayed by the game
-ITEM_TYPE="Consumable" # Type of the item, which can be "Consumable", "Junk", "Skill Card", "Book"
-ITEM_DESC="A mysterious item that seems to have no effect. Maybe it's just a copy of something else?"
+ITEM_NAME="Tome of Knowledge" # Name of the item that will be displayed by the game
+ITEM_TYPE="Book" # Type of the item, which can be "Consumable", "Junk", "Skill Card", "Book"
+ITEM_DESC="All the answers to why we don't talk about *that*"
 item_effect() {
     # This function defines the effect of the item when used by the player.
     # You can modify the player's stats or inventory here.
