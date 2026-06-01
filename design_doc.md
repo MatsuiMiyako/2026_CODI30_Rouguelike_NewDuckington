@@ -178,6 +178,14 @@ Once the dragon is defeated, you win the game and establish New Duckington. If t
 ║        SPD · LCK             ║
 ╚══════════════════════════════╝
                │
+               │
+               ▼
+╔══════════════════════════════╗
+║      CHARACTER SELECTION     ║
+║  (different base stats       ║
+║      for each character)     ║
+╚══════════════════════════════╝
+               │
 ━━━━━━━━━━━━ FLOOR LOOP ━━━━━━━━━━━━
                │
                ▼
@@ -192,11 +200,11 @@ Once the dragon is defeated, you win the game and establish New Duckington. If t
 ╚══════════════════════════════╝                                           │
                │                                                           │
                ▼                                                           │
-╔══════════════════════════════╗    Flee     ╔══════════════╗              │
-║         PLAYER TURN          ║────────────►║   ESCAPED!   ║──► (map)     │
-║ Attack · Item · Skill · Flee ║             ╚══════════════╝              │
-╚══════════════════════════════╝                                           │
-               │  ▲                                                        │
+╔══════════════════════════════╗    Flee     ╔══════════════╗    (chance to│
+║         PLAYER TURN          ║────────────►║   ESCAPED!   ║──►  skip to  │
+║ Attack · Item · Skill · Flee ║             ╚══════════════╝    nxt lvl,  │
+╚══════════════════════════════╝                                  no stat  │
+               │  ▲                                               increase)│
                │  └──────────────── enemy still alive ──────────────────┐  │
                ▼                                                        │  │
 ╔══════════════════════════════╗                                        │  │
@@ -231,7 +239,7 @@ Once the dragon is defeated, you win the game and establish New Duckington. If t
         │                        │                                         │
         │                        ▼                                         │
         │         ╔══════════════════════════════╗                         │
-        │         ║    FLOOR 10 / 20 / ... / 90? ║                         │
+        │         ║    FLOOR 1 / 2 / ... / 9?    ║                         │
         │         ╚══════════════════════════════╝                         │
         │                │               │                                 │
         │               Yes              No                                │
@@ -247,12 +255,12 @@ Once the dragon is defeated, you win the game and establish New Duckington. If t
         │                           │                                      │
         │                           ▼                                      │
         │         ╔══════════════════════════════╗                         │
-        │         ║          FLOOR 100?          ║                         │
+        │         ║          FLOOR 10?          ║                         │
         │         ╚══════════════════════════════╝                         │
         │                │               │                                 │
         │               Yes              No ───────────────────────────────┘
         │                │
-        │         ━━━━━━ FLOOR 100 ━━━━━━
+        │         ━━━━━━ FLOOR 10 ━━━━━━
         │                │
         │                ▼
         │         ╔══════════════════════════════╗
