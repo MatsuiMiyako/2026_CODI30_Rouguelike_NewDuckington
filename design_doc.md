@@ -187,6 +187,11 @@ Once the dragon is defeated, you win the game and establish New Duckington. If t
                │
                ▼
 ╔══════════════════════════════╗
+║            STORY             ║
+╚══════════════════════════════╝
+               │
+               ▼
+╔══════════════════════════════╗
 ║    BEAR FORTRESS ARRIVAL     ║
 ║  (entry code required)       ║
 ╚══════════════════════════════╝
