@@ -192,11 +192,11 @@ Once the dragon is defeated, you win the game and establish New Duckington. If t
 ╚══════════════════════════════╝                                           │
                │                                                           │
                ▼                                                           │
-╔══════════════════════════════╗    Flee     ╔══════════════╗              │
-║         PLAYER TURN          ║────────────►║   ESCAPED!   ║──► (map)     │
-║ Attack · Item · Skill · Flee ║             ╚══════════════╝              │
-╚══════════════════════════════╝                                           │
-               │  ▲                                                        │
+╔══════════════════════════════╗    Flee     ╔══════════════╗    (chance to│
+║         PLAYER TURN          ║────────────►║   ESCAPED!   ║──►  skip to  │
+║ Attack · Item · Skill · Flee ║             ╚══════════════╝    nxt lvl,  │
+╚══════════════════════════════╝                                  no stat  │
+               │  ▲                                               increase)│
                │  └──────────────── enemy still alive ──────────────────┐  │
                ▼                                                        │  │
 ╔══════════════════════════════╗                                        │  │
