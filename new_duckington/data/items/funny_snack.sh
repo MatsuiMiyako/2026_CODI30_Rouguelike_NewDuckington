@@ -14,4 +14,4 @@ item_effect() {
 ITEM_RARITY="Legendary"
 ITEM_NUMBER=002
 ITEM_COST=0
-ITEM_SELL=1
+ITEM_SELL=1 # maybe implement story where shop owner dies and all shop items become free
