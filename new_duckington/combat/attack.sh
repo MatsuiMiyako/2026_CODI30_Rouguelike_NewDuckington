@@ -6,7 +6,7 @@ attack() {
 
 	echo "you have $PLAYER_ATK damage and $ENEMY_NAME has $ENEMY_DEF defence"
 
-	ENEMY_HP=$(( $ENEMY_HP - 999 ))
+	ENEMY_HP=$(( $ENEMY_HP - $DAMAGE_DONE ))
 
 	if [[ $ENEMY_HP -lt 1 ]]; then
 		ENEMY_HP=0
