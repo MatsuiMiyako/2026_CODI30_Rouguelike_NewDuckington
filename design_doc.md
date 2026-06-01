@@ -173,16 +173,16 @@ Once the dragon is defeated, you win the game and establish New Duckington. If t
                │
                ▼
 ╔══════════════════════════════╗
-║      CHARACTER SCREEN        ║
-║  ATK · HP · DEF · NRG        ║
-║        SPD · LCK             ║
+║      CHARACTER SELECTION     ║
+║  (different base stats       ║
+║      for each character)     ║
 ╚══════════════════════════════╝
                │
                ▼
 ╔══════════════════════════════╗
-║      CHARACTER SELECTION     ║
-║  (different base stats       ║
-║      for each character)     ║
+║      CHARACTER SCREEN        ║
+║  ATK · HP · DEF · NRG        ║
+║        SPD · LCK             ║
 ╚══════════════════════════════╝
                │
                ▼
