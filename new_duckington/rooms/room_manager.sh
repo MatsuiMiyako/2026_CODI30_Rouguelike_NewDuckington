@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export GAME_ROOT="$(dirname "$0")/.."
 room_types=("small" "normal" "huge" "shop" "event")
 declare -a room_list
 
@@ -30,12 +30,13 @@ echo ${room_list[@]}
 
 #need to make a list of available enemies, 
 
-EMEMY_POOL=(
-	"bear_cave"
-	"bear_grimbear"
-	"bear_ironbear"
-	"grizzled_mauler"
-
-
-)
-
+declare -a ENEMY_LIST
+#ls $GAME_ROOT/data/enemies/
+for file in $GAME_ROOT/data/enemies/; do
+	echo $file
+	if [[ "$file" == 'ememy_example.sh' ]]; then
+		continue
+	fi
+	ENEMY_LIST+="${file%.sh}"
+done
+echo ${ENEMY_LIST[@]}
