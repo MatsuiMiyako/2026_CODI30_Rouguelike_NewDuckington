@@ -178,7 +178,6 @@ Once the dragon is defeated, you win the game and establish New Duckington. If t
 ║        SPD · LCK             ║
 ╚══════════════════════════════╝
                │
-               │
                ▼
 ╔══════════════════════════════╗
 ║      CHARACTER SELECTION     ║
@@ -264,11 +263,16 @@ Once the dragon is defeated, you win the game and establish New Duckington. If t
         │                │
         │                ▼
         │         ╔══════════════════════════════╗
-        │         ║  FINAL BOSS — BEAR/DRAGON    ║
-        │         ║  The ones who massacred      ║
+        │         ║      "FINAL" BOSS — BEAR     ║
+        │         ║  The one who massacred       ║
         │         ║      New Duckington          ║
         │         ╚══════════════════════════════╝
         │                        │
+        │                        ▼
+        |         ╔══════════════════════════════╗
+        │         ║      FINAL BOSS — DRAGON     ║
+        │         ╚══════════════════════════════╝
+        |                        |
         │                        ▼
         │         ╔══════════════════════════════╗
         │         ║   VICTORY — VENGEANCE        ║
