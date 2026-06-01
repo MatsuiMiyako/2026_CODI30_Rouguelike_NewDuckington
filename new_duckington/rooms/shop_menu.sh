@@ -23,7 +23,7 @@ BROWN='\033[0;33m'   # terminals fake brown using dark yellow/orange
 # Reset colour
 NC='\033[0m'
 
-shop() {
+buy_shop() {
 	echo -e "${RED}===================${NC}"
 	echo -e "${CYAN}The Shop...${NC}"
 	echo -e "${RED}===================${NC}"
@@ -94,4 +94,45 @@ shop() {
 
 
 }
-shop
+buy_shop
+
+
+
+
+
+
+
+#==============================================
+
+
+
+
+sell_shop() {
+
+	echo -e "${RED}===================${NC}"
+	echo -e "${CYAN}The Shop...${NC}"
+	echo -e "${RED}===================${NC}"
+	echo 
+	echo
+	while true; do
+		printf "What Do You Want To Sell?"
+		echo "Your Inventory"
+		echo "-------------------"
+
+
+		# need to list inventory
+
+		echo -e "${RED}[5]  EXIT SHOP${NC}"
+		read sell_action
+
+
+		for owned_item in "${!PLAYER_ITEMS[@]}"; do
+			#loop through inventory
+			echo "[$((owned_item + 1))] ${PLAYER_ITEMS[$owned_item]}"
+			#get item id from inventory
+
+			#display item info
+			
+
+		done
+}
