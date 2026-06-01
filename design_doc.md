@@ -173,6 +173,13 @@ Once the dragon is defeated, you win the game and establish New Duckington. If t
                │
                ▼
 ╔══════════════════════════════╗
+║      CHARACTER SELECTION     ║
+║  (different base stats       ║
+║      for each character)     ║
+╚══════════════════════════════╝
+               │
+               ▼
+╔══════════════════════════════╗
 ║      CHARACTER SCREEN        ║
 ║  ATK · HP · DEF · NRG        ║
 ║        SPD · LCK             ║
@@ -180,9 +187,20 @@ Once the dragon is defeated, you win the game and establish New Duckington. If t
                │
                ▼
 ╔══════════════════════════════╗
-║      CHARACTER SELECTION     ║
-║  (different base stats       ║
-║      for each character)     ║
+║            STORY             ║
+╚══════════════════════════════╝
+               │
+               ▼
+╔══════════════════════════════╗
+║    BEAR FORTRESS ARRIVAL     ║
+║  (entry code required)       ║
+╚══════════════════════════════╝
+               │
+               ▼
+╔══════════════════════════════╗
+║         PUZZLE (TBD)         ║
+║  (player solves a puzzle for ║
+║             entry code)      ║
 ╚══════════════════════════════╝
                │
 ━━━━━━━━━━━━ FLOOR LOOP ━━━━━━━━━━━━

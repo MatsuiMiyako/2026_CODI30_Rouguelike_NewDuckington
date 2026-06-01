@@ -12,9 +12,9 @@ base_flee_chance=10
 flee_chance=$(( $base_flee_chance + $PLAYER_SPD*PLAYER_LCK/2 ))
 
 #sets max flee chance to 75%
-if [[ flee_chance -gt 75 ]]; then
+if [[ flee_chance -gt 33 ]]; then
 
-	flee_chance=75
+	flee_chance=33
 fi
 
 #generates a number for 1-100
@@ -24,7 +24,7 @@ if [[ $random_number -le $flee_chance ]]; then
 
 	echo "You have successfully escaped"
 	echo "returning to game"
-	#return to main game
+	#go to next room
 
 else
 

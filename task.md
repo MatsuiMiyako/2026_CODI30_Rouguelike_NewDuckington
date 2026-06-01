@@ -46,6 +46,8 @@ Screens
     
     - [ ] Complete character screen -- A screen show all player's stats
 
+    - [ ] Character selection screen + backstories and different base stats displayed for each character
+
 Main Menu
 
     - [ ] Put the real function for all four options
