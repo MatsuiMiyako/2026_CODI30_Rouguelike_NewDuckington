@@ -111,11 +111,11 @@ while [[ $battle_end == false ]]; do
 		    echo -e "${YELLOW}========================================${NC}"
 		 	
 
-		    echo -e "${RED}${BEAR_GRUNT[name]} has used ${BEAR_GRUNT[attack]}:-"claw"}${NC}"
+		    echo -e "${RED}${BEAR_GRUNT[name]} has used ${BEAR_GRUNT[attack]:-"claw"}${NC}"
 
-		    DAMAGE_TAKEN=$(($ENEMY_ATK-$PLAYER_DEF))
+		    DAMAGE_TAKEN=$((${BEAR_GRUNT[atk]} - $PLAYER_DEF))
 
-			    
+			echo -e "the enemy has ${BEAR_GRUNT[atk]} damage and you have $PLAYER_DEF def"
 		    echo -e "you have taken $DAMAGE_TAKEN damage"
 		    PLAYER_HP=$(($PLAYER_HP-$DAMAGE_TAKEN))
 

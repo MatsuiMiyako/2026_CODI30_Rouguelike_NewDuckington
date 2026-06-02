@@ -4,7 +4,11 @@ attack() {
 
 	DAMAGE_DONE=$(( $PLAYER_ATK - ${BEAR_GRUNT[def]} ))
 
-	echo "you have $PLAYER_ATK damage and $ENEMY_NAME has $ENEMY_DEF defence"
+	if [[ $DAMAGE_DONE -lt 1 ]]; then
+		DAMAGE_DONE=1
+	fi
+
+	echo "you have $PLAYER_ATK damage and ${BEAR_GRUNT[name]} has ${BEAR_GRUNT[def]} defence"
 
 	BEAR_GRUNT[hp]=$(( ${BEAR_GRUNT[hp]} - $DAMAGE_DONE ))
 
