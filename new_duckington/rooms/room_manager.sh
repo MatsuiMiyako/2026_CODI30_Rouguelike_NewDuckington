@@ -4,7 +4,7 @@ source "$GAME_ROOT/data/enemy_data.sh"
 combat_rooms=("small" "normal" "huge" "shop" "event")
 declare -a room_list
 
-# temp_rooms+=("shop")
+#temp_rooms+=("shop")
 #temp_rooms+=("event")
 
 generate_random_room() {
@@ -17,7 +17,7 @@ generate_random_room() {
 }	
 
 initialize_rooms() {
-	for ((i=0; i<20; i++)); do
+	for ((i=0; i<10; i++)); do
 		generate_random_room
 	done
 
@@ -25,11 +25,21 @@ initialize_rooms() {
 	shuf -e "${room_list[@]}" 1> /dev/null   #shuf sends the output nowhere because it echos for some reason
 }
 
-#initialize_rooms UNCOMMENT THIS LATER
+initialize_rooms  
 echo ${room_list[@]}
 
+declare -a floor_1
+declare -a floor_2
+declare -a floor_3
+declare -a floor_4
+declare -a floor_5
+declare -a floor_6
+declare -a floor_7
+declare -a floor_8
+declare -a floor_9
+declare -a floor_10
 
-
+# kind of raw code right now
 #=================================================================
 
 # #need to make a list of available enemies, 
@@ -75,10 +85,11 @@ echo "${enemy[atk]}"
 
 
 
+
 #i need to setup boss_room
 
 boss_fight(){
-
+echo "You have entered the mini boss on room"
 
 }
 
@@ -88,5 +99,5 @@ boss_fight(){
 
 final_bossfight() {
 
-
+echo "YOU ARE COOKED"
 }
