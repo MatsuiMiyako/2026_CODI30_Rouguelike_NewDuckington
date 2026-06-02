@@ -1,19 +1,22 @@
 #!/bin/bash
 export GAME_ROOT="$(dirname "$0")/.."
-room_types=("small" "normal" "huge" "shop" "event")
+combat_rooms=("small" "normal" "huge" "shop" "event")
 declare -a room_list
 
-generate_random_room() {
-	# i want to list the 3 types of rooms and 
+# temp_rooms+=("shop")
+#temp_rooms+=("event")
 
-	selected_room=${room_types[$((RANDOM % ${#room_types[@]}))]}
+generate_random_room() {
+	# i want to list the 3 types of rooms and also have guaranteed rooms
+
+	selected_room=${combat_rooms[$((RANDOM % ${#combat_rooms[@]}))]}
 	# i think this picks between the 3 different options
 
 	room_list+=("$selected_room")
 }	
 
 initialize_rooms() {
-	for ((i=0; i<10; i++)); do
+	for ((i=0; i<20; i++)); do
 		generate_random_room
 	done
 
@@ -40,4 +43,9 @@ for file in $GAME_ROOT/data/enemies/*; do
     fi
 done
 echo ${ENEMY_LIST[@]}
+
+
+
+
+
 
