@@ -2,7 +2,7 @@
 
 export GAME_ROOT="$(dirname "$0")/.."
 source "$GAME_ROOT/system/stats.sh"
-source "$GAME_ROOT/data/enemies/ememy_example.sh"
+source "$GAME_ROOT/data/enemy_data.sh"
 source "$GAME_ROOT/system/stats.sh"
 source "$GAME_ROOT/combat/attack.sh"
 source "$GAME_ROOT/combat/flee.sh"
@@ -80,7 +80,9 @@ while [[ $battle_end == false ]]; do
 	    echo -e "${YELLOW}         ⚔ YOUR TURN ⚔${NC}"
 	    echo -e "${CYAN}========================================${NC}"
 
-	    display_player_stats
+	    paste -d ' ' \
+    	<(display_player_stats) \
+    	<(display_enemy_stats "BEAR_GRUNT")
 
 	    echo -e "Choose your action:${NC}"
 	    echo -e "${RED}[1] Attack${NC}"
@@ -103,7 +105,7 @@ while [[ $battle_end == false ]]; do
 
 	while [[ $player_turn != true ]]; do
 
-		if [[ $ENEMY_HP != 0 ]]; then
+		if [[ ${BEAR_GRUNT[hp]} != 0 ]]; then
 
 		
 			echo -e "${YELLOW}========================================${NC}"
@@ -111,11 +113,11 @@ while [[ $battle_end == false ]]; do
 		    echo -e "${YELLOW}========================================${NC}"
 		 	
 
-		    echo -e "${RED}$ENEMY_NAME has used ${ENEMY_ATK_NAME:-"claw"}${NC}"
+		    echo -e "${RED}${BEAR_GRUNT[name]} has used ${BEAR_GRUNT[attack]:-"claw"}${NC}"
 
-		    DAMAGE_TAKEN=$(($ENEMY_ATK-$PLAYER_DEF))
+		    DAMAGE_TAKEN=$((${BEAR_GRUNT[atk]} - $PLAYER_DEF))
 
-			    
+			echo -e "the enemy has ${BEAR_GRUNT[atk]} damage and you have $PLAYER_DEF def"
 		    echo -e "you have taken $DAMAGE_TAKEN damage"
 		    PLAYER_HP=$(($PLAYER_HP-$DAMAGE_TAKEN))
 

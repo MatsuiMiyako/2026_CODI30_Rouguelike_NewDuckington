@@ -36,6 +36,8 @@ PLAYER_SKILL_CARDS="$PLAYER_SKILL_CARDS"
 EOF
 }
 
+source "$GAME_ROOT/data/enemy_data.sh"
+
 display_player_stats() {
     echo "╔══════════════════════════════╗"
     echo "║       PLAYER  STATS          ║"
@@ -97,4 +99,15 @@ display_player_skill_cards() {
     echo "╠═══════════════════════════════════════════╣"
     echo "║  show_card <card name>                    ║"
     echo "╚═══════════════════════════════════════════╝"
+}
+
+display_enemy_stats() {
+    local -n enemy="$1"
+    echo "╔═════════════════════════════════════════╗"
+    printf "║  ENEMY: %-31s ║\n" "${enemy[name]}"
+    echo "╠═════════════════════════════════════════╣"
+    printf "║  HP : %5d/%-5d                       ║\n" "${enemy[hp]}" "${enemy[hp_max]}"
+    printf "║  ATK: %3d   DEF: %3d                    ║\n" "${enemy[atk]}" "${enemy[def]}"
+    printf "║  BASIC ATK: %-16s            ║\n" "${enemy[attack]}"
+    echo "╚═════════════════════════════════════════╝"
 }
