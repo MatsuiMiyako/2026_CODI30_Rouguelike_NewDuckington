@@ -7,7 +7,7 @@ declare -A BEAR_GRUNT=(
     [hp_max]=110
     [atk]=16
     [def]=11
-    [attack]="Ferocious Prowl"
+    [attack_name]="Ferocious Prowl"
 )
 
 declare -A EARTH_BEAR=(
@@ -16,7 +16,7 @@ declare -A EARTH_BEAR=(
     [hp_max]=160
     [atk]=14
     [def]=22
-    [attack]="Boulder Smash"
+    [attack_name]="Boulder Smash"
 )
 
 declare -A IRON_BEAR=(
@@ -34,7 +34,7 @@ declare -A GRIM_BEAR=(
     [hp_max]=110
     [atk]=16
     [def]=11
-    [attack]="Grimsweep"
+    [attack_name]="Grimsweep"
 )
 
 declare -A HOLLOW_BEAR=(
@@ -43,7 +43,7 @@ declare -A HOLLOW_BEAR=(
     [hp_max]=180
     [atk]=24
     [def]=15
-    [attack]="Soul Crush"
+    [attack_name]="Soul Crush"
 )
 
 declare -A GRIZZLED_MAULER=(
@@ -52,7 +52,7 @@ declare -A GRIZZLED_MAULER=(
     [hp_max]=75
     [atk]=13
     [def]=6
-    [attack]="Mauling Frenzy"
+    [attack_name]="Mauling Frenzy"
 )
 
 declare -A WATER_BEAR=(
@@ -61,7 +61,7 @@ declare -A WATER_BEAR=(
     [hp_max]=80
     [atk]=10
     [def]=8
-    [attack]="Cutting Wave"
+    [attack_name]="Cutting Wave"
 )
 
 declare -A FIRE_BEAR=(
@@ -70,7 +70,7 @@ declare -A FIRE_BEAR=(
     [hp_max]=90
     [atk]=18
     [def]=5
-    [attack]="Inferno Beam"
+    [attack_name]="Inferno Beam"
 )
 
 declare -A AIR_BEAR=(
@@ -79,5 +79,7 @@ declare -A AIR_BEAR=(
     [hp_max]=65
     [atk]=14
     [def]=4
-    [attack]="Galestrike"
+    [attack_name]="Galestrike"
 )
+
+# WHOEVER MAKES MORE ENEMIES PLZ SET THE NAME AS ATTACK NAME NOT ATTACK(THE VARIABLE)
