@@ -2,7 +2,7 @@
 
 export GAME_ROOT="$(dirname "$0")/.."
 source "$GAME_ROOT/system/stats.sh"
-source "$GAME_ROOT/data/enemies/ememy_example.sh"
+source "$GAME_ROOT/data/enemy_data.sh"
 source "$GAME_ROOT/system/stats.sh"
 source "$GAME_ROOT/combat/attack.sh"
 source "$GAME_ROOT/combat/flee.sh"
@@ -103,7 +103,7 @@ while [[ $battle_end == false ]]; do
 
 	while [[ $player_turn != true ]]; do
 
-		if [[ $ENEMY_HP != 0 ]]; then
+		if [[ ${BEAR_GRUNT[hp]} != 0 ]]; then
 
 		
 			echo -e "${YELLOW}========================================${NC}"
@@ -111,7 +111,7 @@ while [[ $battle_end == false ]]; do
 		    echo -e "${YELLOW}========================================${NC}"
 		 	
 
-		    echo -e "${RED}$ENEMY_NAME has used ${ENEMY_ATK_NAME:-"claw"}${NC}"
+		    echo -e "${RED}${BEAR_GRUNT[name]} has used ${BEAR_GRUNT[attack]}:-"claw"}${NC}"
 
 		    DAMAGE_TAKEN=$(($ENEMY_ATK-$PLAYER_DEF))
 
