@@ -7,7 +7,7 @@ source "$GAME_ROOT/data/player_data.sh"
 skill_name='Arial Assault'
 skill_description='Duck flys in the air and drops rocks from above'
 rarity='uncommon'
-damage=20
+damage=10
 energy_cost=5
 
 

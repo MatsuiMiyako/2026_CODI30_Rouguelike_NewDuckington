@@ -83,8 +83,18 @@ display_player_skill_cards() {
     echo "╔═══════════════════════════════════════════╗"
     echo "║            PLAYER  SKILL CARDS            ║"
     echo "╠═══════════════════════════════════════════╣"
-    printf "║  Skill Cards: %-27s ║\n" "$PLAYER_SKILL_CARDS"
-    echo "║  Type the command 'show_card [card name]' ║"
-    echo "║  to see the details of a skill card.      ║"
+
+    if [ ${#PLAYER_SKILL_CARDS[@]} -eq 0 ]; then
+        printf "║  %-40s ║\n" "None"
+    fi
+    
+    local i=1
+    for item in "${PLAYER_SKILL_CARDS[@]}"; do
+        printf "║  [%2d] %-35.35s ║\n" "$i" "$item"
+        ((i++))
+    done
+
+    echo "╠═══════════════════════════════════════════╣"
+    echo "║  show_card <card name>                    ║"
     echo "╚═══════════════════════════════════════════╝"
 }

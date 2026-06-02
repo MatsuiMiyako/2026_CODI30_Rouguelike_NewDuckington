@@ -4,12 +4,11 @@ export GAME_ROOT="$(dirname "$0")/.."
 source "$GAME_ROOT/data/player_data.sh"
 
 #Skill Properties
-skill_name='Arial Assault'
-skill_description='Duck flys in the air and drops rocks from above'
-rarity='uncommon'
-damage=20
-energy_cost=5
-
+skill_name='Hurricane'
+skill_description='duck flys in a circle to summon a hurricane'
+rarity='legendary'
+damage=50
+energy_cost=25
 
 enemy_health=15 #This is a placeholder variable - update as game further develops
 energy_difference=$(($PLAYER_NRG - $energy_cost))
@@ -23,4 +22,3 @@ if (( $(( $energy_difference ))  >= 0 )); then #Verify if player has sufficient 
 	sed -i "s/^PLAYER_NRG=.*/PLAYER_NRG=$energy_difference/" "$GAME_ROOT/data/player_data.sh" #Update player's energy level with the difference from the cost.
 else
 	echo "You do not have enough energy for this action! (Current energy level: $PLAYER_NRG)"
-fi	
