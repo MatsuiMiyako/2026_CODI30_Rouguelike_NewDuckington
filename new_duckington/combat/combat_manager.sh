@@ -13,8 +13,6 @@ source "$GAME_ROOT/screens/win_screen.sh"
 
 load_player_data
 
-
-
 player_turn=true
 base_flee_chance=10
 battle_end=false
@@ -30,6 +28,8 @@ NC='\033[0m' # No Color
 
 clear
 
+# Accepts an enemy as the first arguement when running the script but also defaults if empty, ADD HANDLING FOR INVALID LATER
+declare -n current_enemy="${1:-BEAR_GRUNT}"
 
 action_selection() {
 
@@ -37,11 +37,8 @@ action_selection() {
 
 	case $action in
 	        1|attack|Attack)
-	            
 	            echo -e "${RED}You attack the enemy!${NC}"
 	            attack
-	            
-
 	            ;;
 	            
 			2|skill)
@@ -82,7 +79,7 @@ while [[ $battle_end == false ]]; do
 
 	    paste -d ' ' \
     	<(display_player_stats) \
-    	<(display_enemy_stats "BEAR_GRUNT")
+    	<(display_enemy_stats "current_enemy")
 
 	    echo -e "Choose your action:${NC}"
 	    echo -e "${RED}[1] Attack${NC}"
@@ -105,7 +102,7 @@ while [[ $battle_end == false ]]; do
 
 	while [[ $player_turn != true ]]; do
 
-		if [[ ${BEAR_GRUNT[hp]} != 0 ]]; then
+		if [[ ${current_enemy[hp]} != 0 ]]; then
 
 		
 			echo -e "${YELLOW}========================================${NC}"
@@ -113,11 +110,11 @@ while [[ $battle_end == false ]]; do
 		    echo -e "${YELLOW}========================================${NC}"
 		 	
 
-		    echo -e "${RED}${BEAR_GRUNT[name]} has used ${BEAR_GRUNT[attack]:-"claw"}${NC}"
+		    echo -e "${RED}${current_enemy[name]} has used ${current_enemy[attack_name]:-"claw"}${NC}"
 
-		    DAMAGE_TAKEN=$((${BEAR_GRUNT[atk]} - $PLAYER_DEF))
+		    DAMAGE_TAKEN=$((${current_enemy[atk]} - $PLAYER_DEF))
 
-			echo -e "the enemy has ${BEAR_GRUNT[atk]} damage and you have $PLAYER_DEF def"
+			echo -e "the enemy has ${current_enemy[atk]} damage and you have $PLAYER_DEF def"
 		    echo -e "you have taken $DAMAGE_TAKEN damage"
 		    PLAYER_HP=$(($PLAYER_HP-$DAMAGE_TAKEN))
 

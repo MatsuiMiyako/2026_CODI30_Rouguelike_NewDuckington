@@ -20,16 +20,16 @@ declare -A EARTH_BEAR=(
 )
 
 declare -A IRON_BEAR=(
-    [name]="Ironbear"
+    [name]="Iron Bear"
     [hp]=150
     [hp_max]=150
     [atk]=20
     [def]=18
-    [attack]="Ironslam"
+    [attack_name]="Ironslam"
 )
 
 declare -A GRIM_BEAR=(
-    [name]="Grimbear"
+    [name]="Grim Bear"
     [hp]=110
     [hp_max]=110
     [atk]=16
@@ -38,7 +38,7 @@ declare -A GRIM_BEAR=(
 )
 
 declare -A HOLLOW_BEAR=(
-    [name]="Hollowbear"
+    [name]="Hollow Bear"
     [hp]=180
     [hp_max]=180
     [atk]=24
@@ -56,7 +56,7 @@ declare -A GRIZZLED_MAULER=(
 )
 
 declare -A WATER_BEAR=(
-    [name]="Waterbear"
+    [name]="Water Bear"
     [hp]=80
     [hp_max]=80
     [atk]=10
@@ -65,7 +65,7 @@ declare -A WATER_BEAR=(
 )
 
 declare -A FIRE_BEAR=(
-    [name]="Firebear"
+    [name]="Fire Bear"
     [hp]=90
     [hp_max]=90
     [atk]=18
@@ -74,7 +74,7 @@ declare -A FIRE_BEAR=(
 )
 
 declare -A AIR_BEAR=(
-    [name]="Airbear"
+    [name]="Air Bear"
     [hp]=65
     [hp_max]=65
     [atk]=14

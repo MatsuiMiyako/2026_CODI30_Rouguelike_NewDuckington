@@ -2,7 +2,7 @@
 
 attack() {
 
-	DAMAGE_DONE=$(( $PLAYER_ATK - ${BEAR_GRUNT[def]} ))
+	DAMAGE_DONE=$(( $PLAYER_ATK - ${current_enemy[def]} ))
 
 	if [[ $DAMAGE_DONE -lt 1 ]]; then
 		DAMAGE_DONE=1
