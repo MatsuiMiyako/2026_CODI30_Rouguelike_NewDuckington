@@ -38,56 +38,66 @@ EOF
 
 source "$GAME_ROOT/data/enemy_data.sh"
 
-progreSh() {
+animated_hp_bar_line() {
     # Source: https://github.com/extensionsapp/progre.sh
-    LR='\033[1;31m'
-    LG='\033[1;32m'
-    LY='\033[1;33m'
-    LC='\033[1;36m'
-    LW='\033[1;37m'
-    NC='\033[0m'
-    if [ "${1}" = "0" ]; then TME=$(date +"%s"); fi
-    SEC=`printf "%04d\n" $(($(date +"%s")-${TME}))`; SEC="$SEC sec"
-    PRC=`printf "%.0f" ${1}`
-    SHW=`printf "%3d\n" ${PRC}`
-    LNE=`printf "%.0f" $((${PRC}/2))`
-    LRR=`printf "%.0f" $((${PRC}/2-12))`; if [ ${LRR} -le 0 ]; then LRR=0; fi;
-    LYY=`printf "%.0f" $((${PRC}/2-24))`; if [ ${LYY} -le 0 ]; then LYY=0; fi;
-    LCC=`printf "%.0f" $((${PRC}/2-36))`; if [ ${LCC} -le 0 ]; then LCC=0; fi;
-    LGG=`printf "%.0f" $((${PRC}/2-48))`; if [ ${LGG} -le 0 ]; then LGG=0; fi;
-    LRR_=""
-    LYY_=""
-    LCC_=""
-    LGG_=""
-    for ((i=1;i<=13;i++))
-    do
-    	DOTS=""; for ((ii=${i};ii<13;ii++)); do DOTS="${DOTS}."; done
-    	if [ ${i} -le ${LNE} ]; then LRR_="${LRR_}#"; else LRR_="${LRR_}."; fi
-    	echo -ne "  ${LW}${SEC}  ${LR}${LRR_}${DOTS}${LY}............${LC}............${LG}............ ${SHW}%${NC}\r"
-    	if [ ${LNE} -ge 1 ]; then sleep .05; fi
+    # Claude is a genius for this one
+    local current=$1
+    local max=$2
+    local width=20
+    local delay=0.01
+
+    [ "$max" -le 0 ] && max=1
+    [ "$current" -lt 0 ] && current=0
+    [ "$current" -gt "$max" ] && current=$max
+
+    local percent=$(( current * 100 / max ))
+    local filled=$(( current * width / max ))
+
+    # Colors
+    local RED='\033[1;31m'
+    local YELLOW='\033[1;33m'
+    local GREEN='\033[1;32m'
+    local RESET='\033[0m'
+
+    local color
+    if [ "$percent" -ge 70 ]; then
+        color=$GREEN
+    elif [ "$percent" -ge 30 ]; then
+        color=$YELLOW
+    else
+        color=$RED
+    fi
+
+    # Build the bar once
+    local bar=""
+    local empty=""
+    
+    for ((i=0; i<filled; i++)); do
+        bar="${bar}█"
     done
-    for ((i=14;i<=25;i++))
-    do
-    	DOTS=""; for ((ii=${i};ii<25;ii++)); do DOTS="${DOTS}."; done
-    	if [ ${i} -le ${LNE} ]; then LYY_="${LYY_}#"; else LYY_="${LYY_}."; fi
-    	echo -ne "  ${LW}${SEC}  ${LR}${LRR_}${LY}${LYY_}${DOTS}${LC}............${LG}............ ${SHW}%${NC}\r"
-    	if [ ${LNE} -ge 14 ]; then sleep .05; fi
+    
+    for ((i=0; i<width-filled; i++)); do
+        empty="${empty}░"
     done
-    for ((i=26;i<=37;i++))
-    do
-    	DOTS=""; for ((ii=${i};ii<37;ii++)); do DOTS="${DOTS}."; done
-    	if [ ${i} -le ${LNE} ]; then LCC_="${LCC_}#"; else LCC_="${LCC_}."; fi
-    	echo -ne "  ${LW}${SEC}  ${LR}${LRR_}${LY}${LYY_}${LC}${LCC_}${DOTS}${LG}............ ${SHW}%${NC}\r"
-    	if [ ${LNE} -ge 26 ]; then sleep .05; fi
+
+    # Animate by printing progressively
+    for ((i=0; i<=filled; i++)); do
+        local partial_bar=""
+        for ((j=0; j<i; j++)); do
+            partial_bar="${partial_bar}█"
+        done
+        for ((j=i; j<width; j++)); do
+            partial_bar="${partial_bar}░"
+        done
+        
+        printf "\rHP [${color}%s${RESET}] %3d%% (%d/%d)" "$partial_bar" "$percent" "$current" "$max"
+        sleep "$delay"
     done
-    for ((i=38;i<=49;i++))
-    do
-    	DOTS=""; for ((ii=${i};ii<49;ii++)); do DOTS="${DOTS}."; done
-    	if [ ${i} -le ${LNE} ]; then LGG_="${LGG_}#"; else LGG_="${LGG_}."; fi
-    	echo -ne "  ${LW}${SEC}  ${LR}${LRR_}${LY}${LYY_}${LC}${LCC_}${LG}${LGG_}${DOTS} ${SHW}%${NC}\r"
-    	if [ ${LNE} -ge 38 ]; then sleep .05; fi
-    done
+    
+    # Return the final bar with newline
+    printf "HP [${color}%s${RESET}] %3d%% (%d/%d)\n" "$bar$empty" "$percent" "$current" "$max"
 }
+
 
 display_player_stats() {
     echo "╔══════════════════════════════╗"
@@ -99,10 +109,7 @@ display_player_stats() {
     printf "║  ATK: %3d   DEF: %3d         ║\n" "$PLAYER_ATK" "$PLAYER_DEF"
     printf "║  SPD: %3d   LCK: %3d%%        ║\n" "$PLAYER_SPD" "$PLAYER_LCK"
     echo "╚══════════════════════════════╝"
-    # Health bar using progreSh
-    local hp_percentage=$(( PLAYER_HP * 100 / PLAYER_HP_MAX ))
-    echo "HP: $PLAYER_HP / $PLAYER_HP_MAX"
-    progreSh $hp_percentage
+
 }
 
 display_player_equipment() {
@@ -163,12 +170,8 @@ display_enemy_stats() {
     echo "╠═════════════════════════════════════════╣"
     printf "║  HP : %5d/%-5d                       ║\n" "${enemy[hp]}" "${enemy[hp_max]}"
     printf "║  ATK: %3d   DEF: %3d                    ║\n" "${enemy[atk]}" "${enemy[def]}"
-    printf "║  BASIC ATK: %-16s            ║\n" "${enemy[attack]}"
+    printf "║  BASIC ATK: %-16s            ║\n" "${enemy[attack_name]}"
     echo "╚═════════════════════════════════════════╝"
 
-    # Health bar using progreSh
-    local hp_percentage=$(( enemy[hp] * 100 / enemy[hp_max] ))
-    echo "HP: ${enemy[hp]} / ${enemy[hp_max]}"
-    progreSh $hp_percentage
 }
 
