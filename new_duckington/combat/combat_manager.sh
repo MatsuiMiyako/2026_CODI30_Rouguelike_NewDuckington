@@ -29,7 +29,7 @@ NC='\033[0m' # No Color
 clear
 
 # Accepts an enemy as the first arguement when running the script but also defaults if empty, ADD HANDLING FOR INVALID LATER
-declare -n current_enemy="${1:-BEAR_GRUNT}"
+declare -n current_enemy="${1:-current_enemy}"
 
 action_selection() {
 
@@ -77,7 +77,7 @@ while [[ $battle_end == false ]]; do
 		# PENGDA CLAUDE CODE START
 		# Get stats as arrays of lines
 		mapfile -t player_lines < <(display_player_stats)
-		mapfile -t enemy_lines < <(display_enemy_stats "BEAR_GRUNT")
+		mapfile -t enemy_lines < <(display_enemy_stats "current_enemy")
 
 		for ((i=0; i<${#player_lines[@]}; i++)); do
 			printf "%-32s                                   %s\n" "${player_lines[$i]}" "${enemy_lines[$i]}"
@@ -90,8 +90,8 @@ while [[ $battle_end == false ]]; do
 		for ((i=0; i<filled; i++)); do player_bar="${player_bar}█"; done
 		for ((i=0; i<20-filled; i++)); do player_bar="${player_bar}░"; done
 
-		enemy_percent=$((BEAR_GRUNT[hp] * 100 / BEAR_GRUNT[hp_max]))
-		enemy_filled=$((BEAR_GRUNT[hp] * 20 / BEAR_GRUNT[hp_max]))
+		enemy_percent=$((current_enemy[hp] * 100 / current_enemy[hp_max]))
+		enemy_filled=$((current_enemy[hp] * 20 / current_enemy[hp_max]))
 		enemy_bar=""
 		for ((i=0; i<enemy_filled; i++)); do enemy_bar="${enemy_bar}█"; done
 		for ((i=0; i<20-enemy_filled; i++)); do enemy_bar="${enemy_bar}░"; done
@@ -99,7 +99,7 @@ while [[ $battle_end == false ]]; do
 		printf "HP [\033[1;32m%s\033[0m] %3d%% (%d/%d)%-27sHP [\033[1;32m%s\033[0m] %3d%% (%d/%d)\n" \
 		"$player_bar" "$percent" "$PLAYER_HP" "$PLAYER_HP_MAX" \
 		"" \
-		"$enemy_bar" "$enemy_percent" "${BEAR_GRUNT[hp]}" "${BEAR_GRUNT[hp_max]}"
+		"$enemy_bar" "$enemy_percent" "${current_enemy[hp]}" "${current_enemy[hp_max]}"
 		# PENGDA CLAUDE CODE END
 		# PS: READ WHAT THE CODE ACTUALLY DOES CUZ I HAD TO FIX ERRORS FROM IT
 		# PPS: IT WAS ONLY 3 LINES AND ONE OF THEM WAS A COMMENT
@@ -135,9 +135,8 @@ while [[ $battle_end == false ]]; do
 
 			echo -e "the enemy has ${current_enemy[atk]} damage and you have $PLAYER_DEF def"
 		    echo -e "you have taken $DAMAGE_TAKEN damage"
-		    echo $PLAYER_HP
+
 		    PLAYER_HP=$(($PLAYER_HP-$DAMAGE_TAKEN))
-		    echo $PLAYER_HP
 
 			if [[ $PLAYER_HP -lt 1 ]]; then
 			  	PLAYER_HP=0
