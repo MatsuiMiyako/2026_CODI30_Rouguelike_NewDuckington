@@ -69,35 +69,56 @@ action_selection() {
 
 while [[ $battle_end == false ]]; do
 	
-# player turn loop
 	while [[ $player_turn == true ]]; do
+		echo -e "${CYAN}===================================================================================================================${NC}"
+		echo -e "${YELLOW}        				   ⚔ YOUR TURN ⚔${NC}"
+		echo -e "${CYAN}===================================================================================================================${NC}"
 
+		# Claude {
+		load_player_data
+		source "$GAME_ROOT/system/stats.sh"
+		source "$GAME_ROOT/data/enemy_data.sh"
+
+		# Get stats as arrays of lines
+		mapfile -t player_lines < <(display_player_stats)
+		mapfile -t enemy_lines < <(display_enemy_stats "BEAR_GRUNT")
+
+		for ((i=0; i<${#player_lines[@]}; i++)); do
+			printf "%-32s                                   %s\n" "${player_lines[$i]}" "${enemy_lines[$i]}"
+		done
 		
-	    echo -e "${CYAN}========================================${NC}"
-	    echo -e "${YELLOW}         ⚔ YOUR TURN ⚔${NC}"
-	    echo -e "${CYAN}========================================${NC}"
+		# Calculate and display HP bars
+		percent=$((PLAYER_HP * 100 / PLAYER_HP_MAX))
+		filled=$((PLAYER_HP * 20 / PLAYER_HP_MAX))
+		player_bar=""
+		for ((i=0; i<filled; i++)); do player_bar="${player_bar}█"; done
+		for ((i=0; i<20-filled; i++)); do player_bar="${player_bar}░"; done
 
-	    paste -d ' ' \
-    	<(display_player_stats) \
-    	<(display_enemy_stats "current_enemy")
+		enemy_percent=$((BEAR_GRUNT[hp] * 100 / BEAR_GRUNT[hp_max]))
+		enemy_filled=$((BEAR_GRUNT[hp] * 20 / BEAR_GRUNT[hp_max]))
+		enemy_bar=""
+		for ((i=0; i<enemy_filled; i++)); do enemy_bar="${enemy_bar}█"; done
+		for ((i=0; i<20-enemy_filled; i++)); do enemy_bar="${enemy_bar}░"; done
 
-	    echo -e "Choose your action:${NC}"
-	    echo -e "${RED}[1] Attack${NC}"
-	    echo -e "${BLUE}[2] Skill${NC}"
-	    echo -e "${YELLOW}[3] Item${NC}"
-	    echo -e "${GREEN}[4] Flee${NC} (your flee chance is $(( $base_flee_chance + $PLAYER_SPD*PLAYER_LCK/2 ))%)"
-	    echo
+		printf "HP [\033[1;32m%s\033[0m] %3d%% (%d/%d)%-27sHP [\033[1;32m%s\033[0m] %3d%% (%d/%d)\n" \
+		"$player_bar" "$percent" "$PLAYER_HP" "$PLAYER_HP_MAX" \
+		"" \
+		"$enemy_bar" "$enemy_percent" "${BEAR_GRUNT[hp]}" "${BEAR_GRUNT[hp_max]}"
+		# } End of Claude
 
+		echo
 
+		echo -e "Choose your action:${NC}"
+		echo -e "${RED}[1] Attack${NC}"
+		echo -e "${BLUE}[2] Skill${NC}"
+		echo -e "${YELLOW}[3] Item${NC}"
+		echo -e "${GREEN}[4] Flee${NC} (your flee chance is $(( $base_flee_chance + $PLAYER_SPD*$PLAYER_LCK/2 ))%)"
+		echo
 
-	    action_selection
-
-	    sleep 1
-
-	    player_turn=false
-	    
+		action_selection
+		sleep 1
+		player_turn=false
 	done
-
 
 
 	while [[ $player_turn != true ]]; do
