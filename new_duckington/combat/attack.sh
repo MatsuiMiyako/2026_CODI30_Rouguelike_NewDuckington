@@ -16,7 +16,7 @@ attack() {
 		${BEAR_GRUNT[hp]}=0
 	fi
 
-	echo "$ENEMY_NAME has taken $DAMAGE_DONE damage the enemy now has ${BEAR_GRUNT[hp]} HP"
+	echo "${BEAR_GRUNT[name]} has taken $DAMAGE_DONE damage the enemy now has ${BEAR_GRUNT[hp]} HP"
 
 	if [[ ${BEAR_GRUNT[hp]} == 0 ]]; then
 		win_screen
