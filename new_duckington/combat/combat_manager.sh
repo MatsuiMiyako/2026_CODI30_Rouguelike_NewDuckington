@@ -4,10 +4,11 @@ export GAME_ROOT="$(dirname "$0")/.."
 source "$GAME_ROOT/system/stats.sh"
 source "$GAME_ROOT/data/enemy_data.sh"
 source "$GAME_ROOT/system/stats.sh"
-source "$GAME_ROOT/combat/attack.sh"
-source "$GAME_ROOT/combat/flee.sh"
-source "$GAME_ROOT/combat/item.sh"
-source "$GAME_ROOT/combat/skill.sh"
+source "$GAME_ROOT/combat/combat_options.sh"
+#source "$GAME_ROOT/combat/attack.sh"
+#source "$GAME_ROOT/combat/flee.sh"
+#source "$GAME_ROOT/combat/item.sh"
+#source "$GAME_ROOT/combat/skill.sh"
 source "$GAME_ROOT/screens/lose_screen.sh"
 source "$GAME_ROOT/screens/win_screen.sh"
 
@@ -29,41 +30,41 @@ NC='\033[0m' # No Color
 clear
 
 # Accepts an enemy as the first arguement when running the script but also defaults if empty, ADD HANDLING FOR INVALID LATER
-declare -n current_enemy="${1:-current_enemy}"
+declare -n current_enemy="${1:-BEAR_GRUNT}"
 
 action_selection() {
 
 	read -p "Enter choice: " action
 
 	case $action in
-	        1|attack|Attack)
-	            echo -e "${RED}You attack the enemy!${NC}"
-	            attack
-	            ;;
-	            
-			2|skill)
-				echo -e "${BLUE}You prepare a skill...${NC}"
-				bash "$GAME_ROOT/combat/skill.sh"
-	            ;;
-	            
-			3|item)
-				echo -e "${YELLOW}Opening inventory...${NC}"
-				bash "$GAME_ROOT/combat/item.sh"
-	            ;;
-	            
-			4|flee)
-				echo -e "${GREEN}You attempt to flee!${NC}"
-				bash "$GAME_ROOT/combat/flee.sh"
-	            ;;
-	            
-	        *)
-	            echo
-	            echo -e "Invalid option. Try again."
-	            sleep 2
-	            
-	            action_selection
-	            ;;
-	    esac
+        1|attack|Attack)
+            echo -e "${RED}You attack the enemy!${NC}"
+            attack
+            ;;
+            
+		2|skill)
+			echo -e "${BLUE}You prepare a skill...${NC}"
+			bash "$GAME_ROOT/combat/skill.sh"
+            ;;
+            
+		3|item)
+			echo -e "${YELLOW}Opening inventory...${NC}"
+			bash "$GAME_ROOT/combat/item.sh"
+            ;;
+            
+		4|flee)
+			echo -e "${GREEN}You attempt to flee!${NC}"
+			flee
+            ;;
+            
+        *)
+            echo
+            echo -e "Invalid option. Try again."
+            sleep 2
+            
+            action_selection
+            ;;
+    esac
 }
 
 
@@ -142,7 +143,7 @@ while [[ $battle_end == false ]]; do
 			fi
 
 
-			read -p "press enter to continue: " hi
+			read -p "press enter to continue: "
 		    player_turn=true
 
 		    if [[ $PLAYER_HP == 0 ]]; then
