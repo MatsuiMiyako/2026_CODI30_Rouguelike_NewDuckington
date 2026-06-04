@@ -1,11 +1,5 @@
 #!/bin/bash
 
-export GAME_ROOT="$(dirname "$0")/.."
-source "$GAME_ROOT/system/stats.sh"
-
-load_player_data
-
-
 
 base_flee_chance=10
 
