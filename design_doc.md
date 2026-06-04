@@ -94,13 +94,6 @@ There is an organization called New Duckington beside a pond known as Whispering
 
 You play as one of the few surviving ducks, driven by vengeance and determined to hunt down the bear and dragon duo responsible for the destruction.
 
-## Character Backstories:
- Kyle Pekin: A rich boy who was orphaned
- 
- Crystal Quacker: Queen Avian's daughter
- 
- "Loony" Bill Muscovski: Kooky old mentor
-
 
 ## Progression of Events
 (*character selection when starting the game)

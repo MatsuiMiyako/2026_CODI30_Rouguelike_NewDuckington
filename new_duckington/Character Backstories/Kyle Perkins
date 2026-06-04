@@ -1,0 +1,59 @@
+Kyle Perkins
+Role: Main Hero ( Default Character )
+Personality: Intelligent, disciplined, courageous, skilled in sports and martial arts.
+
+BACKGROUND:
+- Born into a rich family.
+- Trained in martial arts and athletics from a young age.
+- Known for protecting the weak and helping his community.
+- Lost his parents during the war.
+- Determined to discover who started the conflict and bring world peace.
+
+BEFORE POWERS:
+- Exceptional athlete.
+- Skilled hand-to-hand fighter.
+- Natural leader.
+- Strong sense of justice.
+
+BASE STATS:                     STATS WITH Stormblade:               STATS WITH Targaid: 
+PLAYER_HP=100                   PLAYER_HP=100                        PLAYER_HP=100  
+PLAYER_HP_MAX=100               PLAYER_HP_MAX=100                    PLAYER_HP_MAX=100
+PLAYER_ATK=15                   PLAYER_ATK=70                        PLAYER_ATK=40
+PLAYER_DEF=7                    PLAYER_DEF=30                        PLAYER_DEF=70
+PLAYER_NRG=0                    PLAYER_NRG=50                        PLAYER_NRG=50  
+PLAYER_NRG_MAX=100              PLAYER_NRG_MAX=100                   PLAYER_NRG_MAX=100 
+PLAYER_SPD=10                   PLAYER_SPD=60                        PLAYER_SPD=7
+PLAYER_LCK=2                    PLAYER_LCK=2                         PLAYER_LCK=2
+
+WEAPONS:
+Given to him from the Asteroid:
+Stormblade – A sword capable of summoning and controlling lightning.
+Targaid - A shield capable of making a large shield barrier.
+
+Stormblade: BASE POWER: 70%      Targaid: BASE POWER: 50%
+            MAX POWER: 100%               MAX POWER: 100%
+
+STORMBLADE POWERS:                        TARGAID POWERS:  
+- Lightning Strike                        - Normal Shield Effect 
+- Thunder Slash                           - Glow in the dark
+- Electric Speed Boost                    -  Boomerang Effect ( If thrown it will come back to whoever threw it)            
+- Lightning Resistance                    -  Large Bubble Shield (Ultimate Ability)     
+- Thunderstorm (Ultimate Ability)                                                        
+
+AFTER POWERS:
+- Becomes one of the strongest warriors in the war.
+- Gains control over electricity and storms.
+- Uses his powers to protect others and fight for peace.
+
+GOALS:
+- To end the war between ducks and bears.
+- To find the mastermind behind the conflict.
+-  To avenge his family.
+- To become a Protector of his home.
+
+BACKDRAWS:
+- Cannot use both shield and Sword at the same time till the last level when he fully master the powers.
+- Cannot use Ultimate Ability till the last level when he fully master the powers.
+- Spamming the powers a lot makes the character fall unconscious making them easy prey for the bears.
+- Carrying Shield makes player slower in travelling.
+
