@@ -1,5 +1,5 @@
 "Loony" Bill Muscovski
-Role: Inventor / Support Hero
+Role: Inventor/ Supporter / Hero
 Personality: Crafty, creative, unpredictable, resourceful.
 
 BACKGROUND:
@@ -18,16 +18,16 @@ BEFORE POWERS:
 BASE STATS:                       STATS WITH Cryo Stun Gun: 
 PLAYER_HP=50                      PLAYER_HP=50 
 PLAYER_HP_MAX=100                 PLAYER_HP_MAX=100
-PLAYER_ATK=5                      PLAYER_ATK=50
+PLAYER_ATK=5                      PLAYER_ATK=40
 PLAYER_DEF=2                      PLAYER_DEF=20
-PLAYER_NRG=0                      PLAYER_NRG=0
+PLAYER_NRG=0                      PLAYER_NRG=50
 PLAYER_NRG_MAX=100                PLAYER_NRG_MAX=100
 PLAYER_SPD=7                      PLAYER_SPD=30
 PLAYER_LCK=2                      PLAYER_LCK=2
 
 WEAPON:
 Given to him from the Asteroid:
-Cryo Stun Gun – Freezes targets instantly. When thawed, targets lose 30 HP.
+Cryo Stun Gun – Freezes targets instantly. When thawed, targets lose 40 HP.
 
 Cryo Stun Gun BASE POWER: 50%
               MAX POWER: 100%
@@ -39,7 +39,7 @@ CRYO STUN GUN POWERS:
 - Gadget Creation
 - Absolute Zero (Ultimate Ability)
 
-AFTER POWERS:
+AFTER MAIN PLOT:
 - Enhances his inventions using the asteroid technology.
 - Controls powerful freezing attacks.
 - Provides support and battlefield control for allies.
