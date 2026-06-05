@@ -12,7 +12,7 @@ run_floor() {
 
         if [[ $room -eq 9 ]]; then
 
-            shop_room
+            shop
 
         elif [[ $room -eq 10 ]]; then
 

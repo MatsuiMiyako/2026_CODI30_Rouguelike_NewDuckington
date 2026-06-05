@@ -3,7 +3,7 @@
 run_floor() {
 
     echo "Floor 1"
-    echo "The cave feels quiet."
+    echo "The cave feels quiet." #SOMEONE UPDATE THIS WITH THE DESRIPTION THAT SHOULD BE THERE RELATED TO THE LORE
 
     for room in {1..10}; do
 
@@ -12,7 +12,7 @@ run_floor() {
 
         if [[ $room -eq 9 ]]; then
 
-            shop_room
+            shop
 
         elif [[ $room -eq 10 ]]; then
 
