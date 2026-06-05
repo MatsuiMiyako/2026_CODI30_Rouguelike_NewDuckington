@@ -26,5 +26,3 @@ item() {
         esac
     done
 }
-
-item

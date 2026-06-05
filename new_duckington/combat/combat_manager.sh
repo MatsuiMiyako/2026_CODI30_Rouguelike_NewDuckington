@@ -5,12 +5,9 @@ source "$GAME_ROOT/system/stats.sh"
 source "$GAME_ROOT/data/enemy_data.sh"
 source "$GAME_ROOT/system/stats.sh"
 source "$GAME_ROOT/combat/combat_options.sh"
-#source "$GAME_ROOT/combat/attack.sh"
-#source "$GAME_ROOT/combat/flee.sh"
-#source "$GAME_ROOT/combat/item.sh"
-#source "$GAME_ROOT/combat/skill.sh"
 source "$GAME_ROOT/screens/lose_screen.sh"
 source "$GAME_ROOT/screens/win_screen.sh"
+source "$GAME_ROOT/data/items/items_manager.sh"
 
 load_player_data
 
@@ -49,7 +46,7 @@ action_selection() {
             
 		3|item)
 			echo -e "${YELLOW}Opening inventory...${NC}"
-			bash "$GAME_ROOT/combat/item.sh"
+			item
             ;;
             
 		4|flee)
