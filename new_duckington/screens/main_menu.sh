@@ -3,9 +3,11 @@
 use_input="not set" #valid or error as needed...
 choice=""
 # Replace the fragile $0-based path with BASH_SOURCE
-export GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+#export GAME_ROOT="$(dirname "$0")/.."
 source "$GAME_ROOT/save/save_game.sh"
 source "$GAME_ROOT/save/load_game.sh"
+source "$GAME_ROOT/screens/character_select_screen.sh"
+
 display_title(){
 	echo -e "
 ██████╗  ██████╗   ██████╗ ██╗   ██╗ ███████╗ ██╗      ██╗ ██╗  ██╗ ███████╗
@@ -49,6 +51,7 @@ get_user_option()
 	    1)
 	        echo "Starting game..."
 	        sleep 2
+	        display_character_select_title
 	        ;;
 	    2)
 	        echo "Saving progress..."

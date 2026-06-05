@@ -1,16 +1,12 @@
 #!/bin/bash
-export GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+export GAME_ROOT="$(dirname "$0")"
+source "$GAME_ROOT/screens/main_menu.sh"
 
-#source "$GAME_ROOT/screens/main_menu.sh"
-#echo "$GAME_ROOT"
-#ls "$GAME_ROOT/save"
-#source "$GAME_ROOT/save/save_game.sh"
-#declare -F export_player_data
-#while [[ $use_input != "valid" ]]
-#do
-#	clear
-#	display_title
-#	display_inital_menu
-#	get_user_option
-#	get_and_check_input_is_valid
-#done
+while [[ $use_input != "valid" ]]
+do
+	#clear
+	display_title
+	display_inital_menu
+	get_user_option
+	get_and_check_input_is_valid
+done

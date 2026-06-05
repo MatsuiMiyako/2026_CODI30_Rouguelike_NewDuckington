@@ -1,5 +1,6 @@
 #!/bin/bash
  
+CHARACTER_NAME=""
 PLAYER_NAME="Player"
 PLAYER_LEVEL=1
 PLAYER_XP=0
@@ -21,5 +22,5 @@ PLAYER_WEAPON="None"
 PLAYER_ARMOR="None"
 PLAYER_HAT="None"
  
-PLAYER_ITEMS=""
-PLAYER_SKILL_CARDS="Tactical Retreat"
+PLAYER_ITEMS=()
+PLAYER_SKILL_CARDS=("Tactical Retreat")
