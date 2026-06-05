@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source new_duckington/main.sh
+export GAME_ROOT="$(dirname "$0")/.."
+source "$GAME_ROOT/main.sh"
 source "$GAME_ROOT/data/lore/tome_of_knowledge.sh"
 
 ITEM_NAME="Tome of Knowledge"

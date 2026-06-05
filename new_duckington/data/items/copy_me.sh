@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# import what you need here, for example:
-# source new_duckington/main.sh
-# source "$GAME_ROOT/system/stats.sh"
+export GAME_ROOT="$(dirname "$0")/.."
+source "$GAME_ROOT/main.sh"
 
 ITEM_NAME="Copy Me" # Name of the item that will be displayed by the game
 ITEM_TYPE="Consumable" # Type of the item, which can be "Consumable", "Junk", "Skill Card", "Book"

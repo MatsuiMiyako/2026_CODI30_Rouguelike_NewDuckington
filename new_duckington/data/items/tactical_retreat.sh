@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # import what you need here, for example:
-source new_duckington/main.sh
+export GAME_ROOT="$(dirname "$0")/.."
+source "$GAME_ROOT/main.sh"
 source "$GAME_ROOT/system/stats.sh"
 source "$GAME_ROOT/data/skill-cards/skills_manager.sh"
 

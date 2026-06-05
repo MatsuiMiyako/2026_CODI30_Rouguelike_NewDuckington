@@ -16,12 +16,12 @@ BEFORE POWERS:
 - Strong sense of justice.
 
 BASE STATS:                     STATS WITH Stormblade:               STATS WITH Targaid: 
-PLAYER_HP=100                   PLAYER_HP=100                        PLAYER_HP=100  
-PLAYER_HP_MAX=100               PLAYER_HP_MAX=100                    PLAYER_HP_MAX=100
+PLAYER_HP=100                   PLAYER_HP=120                        PLAYER_HP=120  
+PLAYER_HP_MAX=150               PLAYER_HP_MAX=150                    PLAYER_HP_MAX=150
 PLAYER_ATK=15                   PLAYER_ATK=70                        PLAYER_ATK=40
 PLAYER_DEF=7                    PLAYER_DEF=30                        PLAYER_DEF=70
-PLAYER_NRG=0                    PLAYER_NRG=50                        PLAYER_NRG=50  
-PLAYER_NRG_MAX=100              PLAYER_NRG_MAX=100                   PLAYER_NRG_MAX=100 
+PLAYER_NRG=0                    PLAYER_NRG=0                         PLAYER_NRG=0  
+PLAYER_NRG_MAX=50               PLAYER_NRG_MAX=50                    PLAYER_NRG_MAX=50
 PLAYER_SPD=10                   PLAYER_SPD=60                        PLAYER_SPD=7
 PLAYER_LCK=2                    PLAYER_LCK=2                         PLAYER_LCK=2
 

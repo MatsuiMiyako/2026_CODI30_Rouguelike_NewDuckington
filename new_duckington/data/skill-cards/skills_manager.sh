@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source new_duckington/main.sh
+export GAME_ROOT="$(dirname "$0")/.."
+source "$GAME_ROOT/main.sh"
 source "$GAME_ROOT/save/save_game.sh"
 source "$GAME_ROOT/save/load_game.sh"
 source "$GAME_ROOT/system/stats.sh"
