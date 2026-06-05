@@ -20,7 +20,7 @@ PLAYER_HP=50                      PLAYER_HP=50
 PLAYER_HP_MAX=100                 PLAYER_HP_MAX=100
 PLAYER_ATK=5                      PLAYER_ATK=40
 PLAYER_DEF=2                      PLAYER_DEF=20
-PLAYER_NRG=0                      PLAYER_NRG=0
+PLAYER_NRG=0                      PLAYER_NRG=50
 PLAYER_NRG_MAX=100                PLAYER_NRG_MAX=100
 PLAYER_SPD=7                      PLAYER_SPD=30
 PLAYER_LCK=2                      PLAYER_LCK=2
