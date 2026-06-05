@@ -3,7 +3,7 @@
 export GAME_ROOT="$(dirname "$0")/.."
 source "$GAME_ROOT/main.sh"
 source "$GAME_ROOT/system/stats.sh"
-source "$GAME_ROOT/data/items/item_manager.sh"
+source "$GAME_ROOT/data/items/items_manager.sh"
 
 item() {
     display_player_items
@@ -26,3 +26,5 @@ item() {
         esac
     done
 }
+
+item
