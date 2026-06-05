@@ -1,7 +1,6 @@
 #!/bin/bash
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-export GAME_ROOT="$(dirname "$0")/.."
+#export GAME_ROOT="$(dirname "$0")/.."
 source "$GAME_ROOT/save/save_game.sh"
 
 # Load the player's data from the save file. This function should be called at the start of the game to initialize the player's stats and inventory.

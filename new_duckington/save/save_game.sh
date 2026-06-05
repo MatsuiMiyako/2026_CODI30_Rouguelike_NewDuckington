@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export GAME_ROOT="$(dirname "$0")/.."
+#export GAME_ROOT="$(dirname "$0")/.."
 source "$GAME_ROOT/system/stats.sh"
 
 export_player_data() {
