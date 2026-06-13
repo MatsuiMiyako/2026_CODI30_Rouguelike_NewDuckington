@@ -1,12 +1,17 @@
 #!/bin/bash
 
+export GAME_ROOT="$(dirname "${BASH_SOURCE[0]}")/.."
+source "$GAME_ROOT/save/save_game.sh"
+source "$GAME_ROOT/save/load_game.sh"
+source "$GAME_ROOT/data/player_data.sh"
+
 choice=""
 selected_character=""
 
 # placeholder character names for now
-character_1="Character 1"
-character_2="Character 2"
-character_3="Character 3"
+character_1="Bill Muscovski"
+character_2="Crystal Quacker"
+character_3="Kyle Pekins"
 
 display_character_select_title()
 {
@@ -19,13 +24,13 @@ display_character_select_title()
 
 display_character_select_menu()
 {
-	echo "╔══════════════════════════════════════╗"
-	echo "║           [1] $character_1            ║"
-	echo "╠══════════════════════════════════════╣"
-	echo "║           [2] $character_2            ║"
-	echo "╠══════════════════════════════════════╣"
-	echo "║           [3] $character_3            ║"
-	echo "╚══════════════════════════════════════╝"
+	echo "╔═════════════════════════════════════╗"
+	printf "║           [1] $character_1        ║\n"
+	echo "╠═════════════════════════════════════╣"
+	printf "║           [2] $character_2       ║\n"
+	echo "╠═════════════════════════════════════╣"
+	printf "║           [3] $character_3           ║\n"
+	echo "╚═════════════════════════════════════╝"
 	echo ""
 }
 
@@ -62,6 +67,9 @@ get_character_selection()
 	esac
 
 	echo "You selected: $selected_character"
+	# Player data initialization based on character selection
+	PLAYER_NAME="$selected_character"
+	save_player_data # Save the selected character's data
 	sleep 1
 }
 

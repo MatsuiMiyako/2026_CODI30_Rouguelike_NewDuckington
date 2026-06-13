@@ -1,6 +1,6 @@
 #!/bin/bash
  
-PLAYER_NAME="Player"
+PLAYER_NAME="Bill Muscovski"
 PLAYER_LEVEL=1
 PLAYER_XP=0
 PLAYER_XP_NEXT=100
