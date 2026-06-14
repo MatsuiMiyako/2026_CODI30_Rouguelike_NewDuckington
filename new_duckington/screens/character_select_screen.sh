@@ -78,6 +78,14 @@ run_character_select_screen()
 	display_character_select_title
 	display_character_select_menu
 	get_character_selection
+
+	if [[ -f "$GAME_ROOT/game_loop.sh" ]]; then
+		bash "$GAME_ROOT/game_loop.sh"
+	else
+		echo "Error: game_loop.sh not found!"
+		echo "Make sure game_loop.sh exists in $GAME_ROOT"
+		exit 1
+	fi
 }
 
 if [[ "${BASH_SOURCE[0]}" == "$0" ]]

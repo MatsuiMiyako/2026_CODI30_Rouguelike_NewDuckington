@@ -51,7 +51,7 @@ get_user_option()
 	    1)
 	        echo "Starting game..."
 	        sleep 2
-	        bash "$GAME_ROOT/screens/character_select_screen.sh"
+	        run_character_select_screen
 	        ;;
 	    2)
 	        echo "Saving progress..."
